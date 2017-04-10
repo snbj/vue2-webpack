@@ -1,0 +1,16 @@
+@import "./variables.scss";
+h1{
+    color:$red;
+}
+body{
+    width:1024px;
+    margin:0px auto;
+    text-align: center;
+}
+.photo{
+    width:324px;
+    height:248px;
+    display:inline-block;
+    background:url('./89.jpg');
+    background-size: 100% 100%;
+}

@@ -1,16 +1,15 @@
-import text from './js/main';
-import './style/main.css';
-import './style/main.scss';
 import Vue from 'vue';
+import text from './common/main';
+import Book from './components/book.vue';
+
+import './assets/main.scss';
 
 new Vue({
-    el:'#book',
-    computed:{
-        h:()=>{
-            return "<span class='book'></span>";
-        }
-    }
-});
+  el: '#app',
+  components: {
+    Book
+  }
+})
 
 new Vue({
     el:'#photo',
