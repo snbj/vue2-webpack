@@ -8,8 +8,11 @@ body{
     text-align: center;
 }
 .photo{
-    height:768px;
+    width:324px;
+    height:248px;
+    display:inline-block;
     background:url('../img/89.jpg');
+    background-size: 100% 100%;
 }
 .book{
     width:128px;

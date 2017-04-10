@@ -5,7 +5,8 @@
       <title>Document</title>
   </head>
 <body>
-    <div class="book"></div>
-    <div class="photo"></div>
+    <div id="book" v-html="h"></div>
+    <div id="photo"><span v-bind:class="{photo:isPhoto}"></span></div>
+    <div id="new" v-html="h"></div>
 </body>
 </html>

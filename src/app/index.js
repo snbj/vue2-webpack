@@ -1,9 +1,30 @@
 import text from './js/main';
 import './style/main.css';
 import './style/main.scss';
+import Vue from 'vue';
 
-let app = document.createElement('div');
+new Vue({
+    el:'#book',
+    computed:{
+        h:()=>{
+            return "<span class='book'></span>";
+        }
+    }
+});
 
-app.innerHTML = '<h1>Hello World it</h1>';
-document.body.appendChild(app);
-app.appendChild(text());
+new Vue({
+    el:'#photo',
+    data:{
+        isPhoto:true
+    }
+})
+
+new Vue({
+    el:'#new',
+    computed:{
+        h:()=>{
+            return "<h1>Hello World it</h1>"+text();
+        }
+    }
+})
+
