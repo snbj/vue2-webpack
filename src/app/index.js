@@ -1,29 +1,15 @@
 import Vue from 'vue';
 import text from './common/main';
 import Book from './components/book.vue';
-
 import './assets/main.scss';
+import Mint from 'mint-ui';
+import 'mint-ui/lib/style.css';
+import './routes.js';
 
-new Vue({
-  el: '#app',
-  components: {
-    Book
-  }
-})
+Vue.use(Mint);
 
-new Vue({
-    el:'#photo',
-    data:{
-        isPhoto:true
-    }
-})
+Mint.Toast('提示信息');
+Vue.component(Mint.Button.name, Mint.Button);
+Vue.component(Mint.Header.name,Mint.Header);
 
-new Vue({
-    el:'#new',
-    computed:{
-        h:()=>{
-            return "<h1>Hello World it</h1>"+text();
-        }
-    }
-})
 

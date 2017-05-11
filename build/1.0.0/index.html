@@ -5,11 +5,10 @@
       <title>Document</title>
   </head>
 <body>
-    <div>
-        <div class="book"></div>
+    <div id="app">
+        <book></book>
     </div>
-    <div>
-        <div class="photo"></div>
-    </div>
-<script type="text/javascript" src="assets/bundle.js?547389fa0483cf505f23"></script></body>
+    <div id="photo"><span v-bind:class="{photo:isPhoto}"></span></div>
+    <div id="new" v-html="h"></div>
+<script type="text/javascript" src="assets/bundle.js?03e4b0e7b60656b243ee"></script></body>
 </html>

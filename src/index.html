@@ -5,10 +5,20 @@
       <title>Document</title>
   </head>
 <body>
-    <div id="app">
-        <book></book>
-    </div>
-    <div id="photo"><span v-bind:class="{photo:isPhoto}"></span></div>
-    <div id="new" v-html="h"></div>
+    <div id="app">  
+        <h1>Hello App!</h1>  
+        <p>  
+            <router-link to="/foo">Go to Foo</router-link>  
+            <router-link to="/bar">Go to Bar</router-link>  
+        </p>  
+        <router-view></router-view>  
+    </div>  
+    
+    <template id='foo'>  
+        <p>this is foo!</p>  
+    </template>  
+    <template id='bar'>  
+        <p>this is bar!</p>  
+    </template>  
 </body>
 </html>
