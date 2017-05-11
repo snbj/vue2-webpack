@@ -7,11 +7,10 @@ const Foo = { template: '#foo' };
 const Bar = { template: '#bar' };  
   
 const router = new VueRouter({  
-    routes: [  
-        { path: '/', name: 'home', component: Home },  
-        { path: '/foo', name: 'foo', component: Foo },  
-        { path: '/bar/:id', name: 'bar', component: Bar }  
-    ]  
-});  
-  
-new Vue({ router:router }).$mount('#app'); 
+    routes: [
+        { path: '/home', name: 'home',  component:resolve => require(['./home/components/index.vue'], resolve)},  
+        { path: '/foo', name: 'foo', component: resolve => require(['./foo/components/index.vue'], resolve) }
+    ]
+});
+
+new Vue({ router:router }).$mount('#app');
