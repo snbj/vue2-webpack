@@ -4,7 +4,6 @@ Vue.use(VueRouter);
 
 const Home = { template: '#home' };  
 const Foo = { template: '#foo' };  
-const Bar = { template: '#bar' };  
   
 const router = new VueRouter({  
     routes: [
