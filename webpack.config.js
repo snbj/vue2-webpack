@@ -4,8 +4,9 @@ var webpack = require('webpack')
     ,packageInfo = require('./package.json')
     ,path = require('path')
     ,ROOT_PATH = path.resolve(__dirname)
-    ,APP_PATH = path.resolve(ROOT_PATH, 'src/app')
+    ,APP_PATH = path.resolve(ROOT_PATH, 'src')
     ,BUILD_PATH = path.resolve(ROOT_PATH, 'build/'+packageInfo.version)
+    ,serverConfig = require('./dev.server.config.js')
 ;
 module.exports = {
     entry:APP_PATH,
@@ -13,6 +14,7 @@ module.exports = {
         path:BUILD_PATH,
         filename:'assets/bundle.js'
     },
+    devServer:serverConfig,
     module: {
         loaders: [
             {
@@ -25,10 +27,14 @@ module.exports = {
                 include: APP_PATH
             },
             {
+                test: /\.less$/, 
+                loader: 'style-loader!css-loader!less-loader'
+            },
+            {
                 test: /.(png|jpe?g|gif|svg)(\?\S*)?$/,
                 loader: 'url-loader',
                 query: {
-                    limit: '40000',
+                    limit: '400000',
                     name: 'assets/img/[name]_[hash:7].[ext]'
                 }
             },
@@ -52,6 +58,7 @@ module.exports = {
         }
     },
     plugins: [
+        new webpack.HotModuleReplacementPlugin(),
         new HtmlwebpackPlugin({
             inject:true,
             hash:true,

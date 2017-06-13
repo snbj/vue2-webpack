@@ -2,14 +2,10 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 
-const Home = { template: '#home' };  
-const Foo = { template: '#foo' };  
-  
-const router = new VueRouter({  
+const router = new VueRouter({
     routes: [
-        { path: '/home', name: 'home',  component:resolve => require(['./home/components/index.vue'], resolve)},  
-        { path: '/foo', name: 'foo', component: resolve => require(['./foo/components/index.vue'], resolve) }
+        { path: '/', name: 'home',  component:resolve => require(['./home/index.vue'], resolve)},
+        { path: '/account/index', name: 'account', component: resolve => require(['./account/user.vue'], resolve) }
     ]
 });
-
-new Vue({ router:router }).$mount('#app');
+export default router

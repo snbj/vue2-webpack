@@ -1,3 +1,0 @@
-<template id='foo'>  
-    <p>this is foo!</p>  
-</template>  
