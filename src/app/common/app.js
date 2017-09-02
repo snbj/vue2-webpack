@@ -1,14 +1,13 @@
-import {is_phone} from './utils.js';
 window.webkit = window.webkit || {};
 let URL = window.messageHandlers ||window.webkit.messageHandlers;
-var isApp = function(){
+let isApp = function(){
     if(!URL) return false;
     if(!URL.appHome) return false;
     if(window.messageHandlers)
         return 'android'; 
     return 'ios';
 }();
-var notice = (name)=>{
+let notice = (name)=>{
     return (file)=>{
         if(!URL) return;
         if(window.messageHandlers)
